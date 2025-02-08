@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday Night Funkin' - Play Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="/">Trung Tung Hoành</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#new">New</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#action">Action</a></li>
+                <li><a href="#puzzle">Puzzle</a></li>
+                <li class="dropdown">
+                    <a href="#more">More +</a>
+                    <div class="dropdown-content">
+                        <a href="#shooting">Shooting</a>
+                        <a href="#arcade">Arcade</a>
+                        <a href="#strategy">Strategy</a>
+                        <!-- Thêm các mục khác -->
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Game Section -->
+    <main class="main-content">
+        <section class="game-container">
+            <h1>Friday Night Funkin'</h1>
+            <div class="game-frame">
+                <div class="responsive-iframe">
+                    <iframe class="game-iframe" id="game-area" src="https://fnf.kdata1.com/2024/fnf/5000/" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+                <button id="fullscreen-btn" class="fullscreen-button">🔲</button>
+            </div>
+            <div class="game-controls">
+                <h3>How to Play:</h3>
+                <ul>
+                    <li>WASD or Arrow keys for movement</li>
+                    <li>Press + and - to adjust volume</li>
+                    <li>Press 0 to mute</li>
+                    <li>Enter to select</li>
+                    <li>ESC to go back</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="related-games">
+            <h2>You might also Like</h2>
+            <div class="games-grid">
+                <!-- Related games will be added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Play Friday Night Funkin' and other popular rhythm games for free!</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#terms">Terms and Conditions</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>  
+        const fullscreenBtn = document.getElementById('fullscreen-btn');  
+        const gameArea = document.getElementById('game-area');  
+    
+        fullscreenBtn.addEventListener('click', () => {  
+            if (!document.fullscreenElement) {  
+                // Nếu chưa ở chế độ fullscreen  
+                gameArea.requestFullscreen().catch(err => {  
+                    console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);  
+                });  
+            } else {  
+                // Nếu đang ở chế độ fullscreen  
+                document.exitFullscreen();  
+            }  
+        });  
+    
+        // Tùy chọn: Thay đổi biểu tượng nút khi vào và ra khỏi chế độ fullscreen  
+        document.addEventListener('fullscreenchange', () => {  
+            if (document.fullscreenElement) {  
+                fullscreenBtn.innerHTML = '🔲'; // Có thể thay đổi biểu tượng này nếu cần  
+            } else {  
+                fullscreenBtn.innerHTML = '🔳'; // Có thể thay đổi biểu tượng này nếu cần  
+            }  
+        });  
+    </script>
+</body>
+</html> 

@@ -1,0 +1,147 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+}
+
+/* Header Styles */
+.main-header {
+    background-color: #333;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 2rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+/* Game Container Styles */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.game-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.game-frame {
+    aspect-ratio: 16/9;
+    background: #000;
+    margin: 2rem 0;
+}
+
+/* Related Games Grid */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Footer Styles */
+.main-footer {
+    background: #333;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .game-container {
+        padding: 1rem;
+    }
+}
+
+/* Thêm vào cuối file CSS */
+.responsive-iframe {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Tỷ lệ 16:9 */
+    overflow: hidden;
+}
+
+.responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.logo a {
+    font-size: 2rem; /* Kích thước chữ */
+    color: #FFD700; /* Màu vàng */
+    text-decoration: none; /* Bỏ gạch chân */
+    font-weight: bold; /* Đậm chữ */
+}
+
+.logo a:hover {
+    color: #FFEA00; /* Màu vàng sáng hơn khi hover */
+}
+
+.fullscreen-button {  
+    background-color: #007BFF; /* Màu xanh để nổi bật */  
+    color: white;             /* Màu chữ trắng */  
+    font-size: 24px;         /* Kích thước chữ lớn */  
+    padding: 10px 15px;      /* Khoảng cách bên trong */  
+    border: none;            /* Bỏ viền */  
+    border-radius: 5px;      /* Góc bo tròn */  
+    cursor: pointer;         /* Đổi con trỏ chuột */  
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */  
+}  
+
+.fullscreen-button:hover {  
+    background-color: #0056b3; /* Màu khi hover */  
+}  
+
+.fullscreen-button:focus {  
+    outline: none; /* Bỏ outline khi nút được chọn */  
+}
